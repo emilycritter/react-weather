@@ -1,0 +1,23 @@
+{
+  "name": "react-weather",
+  "version": "1.0.0",
+  "description": "Weather App (using Node, Express, and React)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emilycritter/react-weather.git"
+  },
+  "author": "Emily C. Ritter",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emilycritter/react-weather/issues"
+  },
+  "homepage": "https://github.com/emilycritter/react-weather#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  }
+}
