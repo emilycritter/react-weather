@@ -22,7 +22,7 @@ describe('GET /api/search-location', function() {
   it('responds with weather data when zip provided', function(done) {
     request(app)
       .get('/api/search-location')
-      .send({
+      .query({
         'location': '76102'
       })
       .set('Accept', 'application/json')

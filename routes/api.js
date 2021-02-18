@@ -4,12 +4,12 @@ const axios = require('axios');
 require('dotenv').config();
 
 router.get('/search-location', (req, res, next) => {
-  if (req.body.location) {
+  if (req.query.location) {
     axios.get('http://api.openweathermap.org/data/2.5/weather', {
       params: {
         appid: process.env.OPEN_WEATHER_MAP_API_KEY,
         units: 'imperial',
-        q: req.body.location + ',US'
+        q: req.query.location + ',US'
       }
     })
     .then(response => {
