@@ -19,11 +19,25 @@ describe('GET /api/search-location', function() {
       .expect(200, done)
   });
 
-  it('responds with weather data when zip provided', function(done) {
+  it('responds with weather data when a zipcode is provided', function(done) {
     request(app)
       .get('/api/search-location')
       .query({
         'location': '76102'
+      })
+      .set('Accept', 'application/json')
+      .expect(function(res) {
+        res.body.length != 0;
+        res.body.weather.length != 0;
+      })
+      .expect(200, done)
+  });
+
+  it('responds with weather data when a city is provided', function(done) {
+    request(app)
+      .get('/api/search-location')
+      .query({
+        'location': 'Fort Worth, TX'
       })
       .set('Accept', 'application/json')
       .expect(function(res) {
