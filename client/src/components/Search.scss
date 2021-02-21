@@ -1,0 +1,107 @@
+@import '../styles/_colors.scss';
+@import '../styles/_mixins.scss';
+
+$search-button-width: 2.5em;
+$search-button-icon-size: 1.25em;
+$search-input-padding-x: 0.75rem;
+$search-input-padding-y: 0.5rem;
+
+.search {
+  padding: 1rem 0;
+}
+
+.search__input-group {
+  position: relative;
+}
+
+.search__input {
+  border: 1px solid $color-primary;
+  border-radius: 0.3rem;
+  font-size: 1em;
+  height: 100%;
+  padding: $search-input-padding-y $search-button-width $search-input-padding-y $search-input-padding-x;
+  width: 100%;
+
+  &::-webkit-search-decoration,
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-results-button,
+  &::-webkit-search-results-decoration {
+    -webkit-appearance:none;
+  }
+
+  &::-ms-clear,
+  &::-ms-reveal {
+    display: none;
+    height: 0;
+    width: 0;
+  }
+
+  &:focus {
+    box-shadow: 0px 0px 0px 2px rgba($color-primary, 0.2) !important;
+    outline: none;
+  }
+
+  .search--error & {
+    border-color: $color-error;
+  }
+
+  .search--error &:focus {
+    box-shadow: 0px 0px 0px 2px rgba($color-error, 0.2) !important;
+  }
+}
+
+.search__input-label {
+  @include reset;
+  font-size: 1em;
+  left: 0;
+  padding: $search-input-padding-y $search-button-width $search-input-padding-y $search-input-padding-x;
+  position: absolute;
+  top: 0;
+  transform-origin: left;
+  transition: all ease-in-out 0.3s;
+  .search__input-group--active & {
+    transform: translateY(-2rem) translateX(-0.8 * $search-input-padding-x) scale(0.8);
+  }
+}
+
+.search__button {
+  @include reset;
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: background ease 0.2s;
+  width: $search-button-width;
+
+  &:active .icon {
+    transform: translateY(2px);
+  }
+
+  &:focus {
+    background-color: $bg-primary;
+  }
+
+  .icon {
+    color: $color-primary;
+    display: block;
+    height: $search-button-icon-size;
+    margin-left: auto;
+    margin-right: auto;
+    transition: all ease 0.2s;
+    width: $search-button-icon-size;
+  }
+}
+
+.search__button:focus .icon {
+  color: $color-white;
+}
+
+.search__error {
+  color: $color-error;
+  font-size: 0.8rem;
+  position: absolute;
+  top: 100%;
+}
