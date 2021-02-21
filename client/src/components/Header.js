@@ -8,7 +8,7 @@ const Header = () => {
       <a href="/" aria-label="Homepage">
         <img
         src={logo} alt="Weather app logo."
-        class="header__logo"
+        className="header__logo"
         width="192" height="192" />
       </a>
     </div>
