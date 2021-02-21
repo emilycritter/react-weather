@@ -7,12 +7,14 @@
   box-shadow: 0 0.3rem 0.5rem rgba($color, 0.1);
   margin: 1rem auto;
   max-width: 36rem;
-  padding: 2rem 3rem;
+  padding: 2rem;
   width: 95%;
-}
 
-@include breakpoint(desktop) {
-  .card {
+  @include breakpoint(tablet) {
+    padding: 2rem 3rem;
+  }
+
+  @include breakpoint(desktop) {
     max-width: 48rem;
   }
 }

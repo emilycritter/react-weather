@@ -1,33 +1,38 @@
 import React from 'react';
+import placeholder from '../images/weather-placeholder.gif';
 import './Results.scss';
 
 const Results = ({ results }) => {
   if (results && results.weather) {
-    const {weather, main, name} = results;
-    const {description, icon} = weather[0];
+    const { weather, main: { temp, feels_like, temp_max, temp_min }, name } = results;
+    const { main, description, icon } = weather[0];
 
     return (
       <div className="results">
-        <div className="results__details">
+        <div className="results__current-conditions">
           <h2>{name} Weather</h2>
-          <div className="results__current-temperate">{parseInt(main.temp)}&deg; F</div>
+          <div className="results__current-temperate">{parseInt(temp)}&deg;F</div>
           <p>
-            <strong>{description}</strong><br />
-            Feels like {parseInt(main.feels_like)}&deg;
+            <strong>{main}</strong><br />
+            Feels like {parseInt(feels_like)}&deg;
           </p>
         </div>
         <div className="results__overview">
+          <div className="results__description">{description}</div>
           <img src={`http://openweathermap.org/img/wn/${icon}@2x.png`} />
-          <div className="results__daily-temperature">
-            {parseInt(main.temp_max)}&deg; / {parseInt(main.temp_min)}&deg;
+          <div className="results__daily-range">
+            {parseInt(temp_max)}&deg; / {parseInt(temp_min)}&deg;
           </div>
         </div>
       </div>
     );
   } else {
     return (
-      <div>
-        Nothing to see here
+      <div className="results__placeholder">
+        <img
+          src={placeholder} alt="Animated icon of different weather."
+          width="375" height="282"
+        />
       </div>
     );
   }

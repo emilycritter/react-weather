@@ -1,38 +1,57 @@
 @import '../styles/_breakpoints.scss';
+@import '../styles/_colors.scss';
 
 .results {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  text-transform: capitalize;
 }
 
-.results__details {
-  width: 100%;
-  h2 {
+.results__placeholder {
+  text-align: center;
+}
 
-  }
-  p {
-    text-transform: capitalize;
-  }
+.results__current-conditions {
+  text-align: center;
+  width: 100%;
 }
 
 .results__current-temperate {
   font-size: 5rem;
   font-weight: bold;
+  line-height: 1;
 }
 
 .results__overview {
+  border-top: 1px solid rgba($color, 0.5);
+  padding: 1rem 0;
   text-align: center;
   width: 100%;
 }
 
-.results__daily-temperature {
+.results__description {
   font-weight: bold;
 }
 
-@include breakpoint(tablet) {
-  .results__details {
+@include breakpoint(phablet) {
+  .results__current-conditions {
+    text-align: left;
+    width: 60%;
+  }
+  .results__overview {
+    border-left: 1px solid rgba($color, 0.5);
+    border-top: none;
+    width: 40%;
+  }
+}
+
+@include breakpoint(desktop) {
+  .results__current-temperate {
+    font-size: 7rem;
+  }
+  .results__current-conditions {
     width: 70%;
   }
   .results__overview {
