@@ -47,12 +47,15 @@ describe('GET /api/search-location', function() {
       .expect(200, done)
   });
 
-  it('responds with a 404 error when a bad location is provided', function(done) {
+  it('responds with an error when a bad location is provided', function(done) {
     request(app)
       .get('/api/search-location')
       .query({
         'location': 'this is a non sense location asdkgfja'
       })
-      .expect(404, done)
+      .expect(function(res) {
+        res.body.name == 'Error'
+      })
+      .expect(200, done)
   });
 });

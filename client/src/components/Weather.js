@@ -16,11 +16,12 @@ const Weather = () => {
       }
     })
     .then(response => {
-      if (!response.data || !response.data.weather) {
+      if (response.data && response.data.weather) {
+        setResults(response.data);
+        setError(false);
+      } else {
         setError(true);
       }
-      setResults(response.data);
-      setError(false);
     })
     .catch(error => {
       setError(true);

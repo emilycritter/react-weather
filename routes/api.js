@@ -15,7 +15,9 @@ router.get('/search-location', (req, res, next) => {
     .then(response => {
       res.send(response.data);
     })
-    .catch(next)
+    .catch(error => {
+      res.send(error);
+    })
   } else {
     res.json({
       error: "Please provide a location."
