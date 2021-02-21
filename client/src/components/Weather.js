@@ -7,24 +7,31 @@ import axios from 'axios';
 const Weather = () => {
   const [location, setLocation] = useState(null);
   const [results, setResults] = useState({});
+  const [error, setError] = useState(false);
 
   const onFormSubmit = async (location) => {
-    const { data } = await axios.get('/api/search-location', {
+    await axios.get('/api/search-location', {
       params: {
         location: location
       }
+    })
+    .then(response => {
+      setResults(response.data);
+      setError(false);
+    })
+    .catch(error => {
+      setError(true);
     });
-    setResults(data);
   }
 
   return (
     <React.Fragment>
       <Card>
         <h1 className="text-center">React Weather App</h1>
-        <Search label="Enter City or Zip" onFormSubmit={onFormSubmit} />
+        <Search label="Enter City or Zip" onFormSubmit={onFormSubmit} error={error}/>
       </Card>
       <Card>
-        <Results results={results} />
+        <Results results={results} error={error}/>
       </Card>
     </React.Fragment>
   );

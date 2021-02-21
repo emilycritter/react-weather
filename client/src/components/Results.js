@@ -2,8 +2,8 @@ import React from 'react';
 import placeholder from '../images/weather-placeholder.gif';
 import './Results.scss';
 
-const Results = ({ results }) => {
-  if (results && results.weather) {
+const Results = ({ results, error }) => {
+  if (results && results.weather && !error) {
     const { weather, main: { temp, feels_like, temp_max, temp_min }, name } = results;
     const { main, description, icon } = weather[0];
 

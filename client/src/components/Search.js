@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Search = ({ label, onFormSubmit }) => {
+const Search = ({ label, onFormSubmit, error }) => {
   const [term, setTerm] = useState('');
 
   const onSubmit = (event) => {
@@ -18,6 +18,10 @@ const Search = ({ label, onFormSubmit }) => {
             onChange={(e) => setTerm(e.target.value)}
             className="input"
           />
+          {error
+            ? <div className="msg--error">No results found</div>
+            : null
+          }
         </div>
       </form>
     </div>
