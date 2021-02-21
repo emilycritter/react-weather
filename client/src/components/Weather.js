@@ -16,6 +16,9 @@ const Weather = () => {
       }
     })
     .then(response => {
+      if (!response.data) {
+        setError(true);
+      }
       setResults(response.data);
       setError(false);
     })
