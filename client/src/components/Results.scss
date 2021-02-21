@@ -1,0 +1,41 @@
+@import '../styles/_breakpoints.scss';
+
+.results {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.results__details {
+  width: 100%;
+  h2 {
+
+  }
+  p {
+    text-transform: capitalize;
+  }
+}
+
+.results__current-temperate {
+  font-size: 5rem;
+  font-weight: bold;
+}
+
+.results__overview {
+  text-align: center;
+  width: 100%;
+}
+
+.results__daily-temperature {
+  font-weight: bold;
+}
+
+@include breakpoint(tablet) {
+  .results__details {
+    width: 70%;
+  }
+  .results__overview {
+    width: 30%;
+  }
+}
