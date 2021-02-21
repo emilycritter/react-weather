@@ -1,0 +1,20 @@
+@import '../styles/_colors.scss';
+@import '../styles/_breakpoints.scss';
+
+.header {
+  background-color: $bg-primary;
+  background-image: linear-gradient(to bottom right, $bg-primary, $bg-primary-dark);
+  padding: 1rem 1.5rem 3rem;
+}
+
+.header__logo {
+  height: auto;
+  width: 2rem;
+}
+
+@include breakpoint(tablet) {
+  .header__logo {
+    height: auto;
+    width: 4rem;
+  }
+}

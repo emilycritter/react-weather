@@ -26,7 +26,7 @@ const Search = () => {
   }, [location]);
 
   return (
-    <div>
+    <div className="search">
       <div className="form">
         <div className="field">
           <label>Enter City or Zip</label>
