@@ -16,7 +16,7 @@ const Weather = () => {
       }
     })
     .then(response => {
-      if (!response.data) {
+      if (!response.data || !response.data.weather) {
         setError(true);
       }
       setResults(response.data);

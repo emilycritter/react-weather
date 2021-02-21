@@ -1,4 +1,3 @@
-import React from 'react';
 import placeholder from '../images/weather-placeholder.gif';
 import './Results.scss';
 
