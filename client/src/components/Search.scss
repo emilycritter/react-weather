@@ -54,6 +54,7 @@ $search-input-padding-y: 0.5rem;
   @include reset;
   font-size: 1em;
   left: 0;
+  line-height: normal;
   padding: $search-input-padding-y $search-button-width $search-input-padding-y $search-input-padding-x;
   position: absolute;
   top: 0;

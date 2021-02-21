@@ -10,8 +10,8 @@ This application accepts a user input (i.e. City or Zip) and returns current wea
 * To install node modules after initial clone, run `yarn` from both the project root and client directory
 
 ### Starting Local Server
-* To start the Express server, run `npm start` from the project root
 * To start the React app and Express server, run `npm run dev`
+* To start the just Express server, run `npm start` from the project root
 
 ### Running Tests
 * To run tests, run `npm test` from the project root
