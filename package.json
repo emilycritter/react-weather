@@ -8,7 +8,7 @@
     "start-watch": "nodemon server.js",
     "dev": "concurrently \"yarn run start-watch\" \"cd client && yarn start\"",
     "test": "jest",
-    "heroku-postbuild": "yarn && npm start && cd client && yarn && yarn run build"
+    "heroku-postbuild": "cd client && yarn && yarn run build"
   },
   "repository": {
     "type": "git",
