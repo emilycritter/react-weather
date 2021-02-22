@@ -18,10 +18,16 @@ This application accepts a user input (i.e. City or Zip) and returns current wea
 
 ## Limitations
 * The application currently works for locations in the US
-* The application does not allow the user to select whether they'd like to see results in Fahrenheit or Celcius
+* The application does not allow the user to select whether they'd like to see results in Fahrenheit or Celsius
 * The OpenWeather API returns the location name, but it does not include the state
   - As a result, locations that exist in more than one state (e.g. Arlington, Virginia and Arlington, Texas) are difficult to search
       * Potential workarounds:
         - Prompt the user to include the city and state
         - Return a map of the location so users can verify the results are for their intended location
         - Incorporate another API  to get more accurate weather results
+
+## Future Improvements
+* Add 5 day forecast
+* Allow user to search outside of US
+  - Include Fahrenheit or Celsius toggle (with default based on location)
+* Get user's location by IP to populate initially
