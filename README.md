@@ -26,8 +26,13 @@ This application accepts a user input (i.e. City or Zip) and returns current wea
         - Return a map of the location so users can verify the results are for their intended location
         - Incorporate another API  to get more accurate weather results
 
-## Future Improvements
+## Enhancements & Future Iterations
+* Replace placeholder gif with animated svg or html5 video to improve performance
+* Add pause functionality to animation for accessibility
 * Add 5 day forecast
 * Allow user to search outside of US
   - Include Fahrenheit or Celsius toggle (with default based on location)
-* Get user's location by IP to populate initially
+* Get user's location by IP to populate results initially
+* Add more robust testing
+  - Unit test Results component and the Search component form submission
+  - Add integration tests
