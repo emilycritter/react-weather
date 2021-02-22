@@ -29,7 +29,7 @@ const Search = ({ label, onFormSubmit, error }) => {
             className="search__input"
           />
           <button type="submit" className="search__button" value="submit">
-            <svg className="icon" viewBox="0 0 24 24"><title>Submit</title><g strokeLinecap="square" strokeLinejoin="miter" strokeWidth="2" stroke="currentColor" fill="none" strokeMiterlimit="10"><line x1="22" y1="22" x2="15.656" y2="15.656"></line><circle cx="10" cy="10" r="8"></circle></g></svg>
+            <svg className="icon" viewBox="0 0 24 24"><title>Search</title><g strokeLinecap="square" strokeLinejoin="miter" strokeWidth="2" stroke="currentColor" fill="none" strokeMiterlimit="10"><line x1="22" y1="22" x2="15.656" y2="15.656"></line><circle cx="10" cy="10" r="8"></circle></g></svg>
           </button>
           {error
             ? <div className="search__error">No results found</div>

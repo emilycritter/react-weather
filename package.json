@@ -3,11 +3,14 @@
   "version": "1.0.0",
   "description": "Weather App (using Node, Express, and React)",
   "main": "index.js",
+  "jest": {
+    "testPathIgnorePatterns": ["client"]
+  },
   "scripts": {
     "start": "node server.js",
     "start-watch": "nodemon server.js",
     "dev": "concurrently \"yarn run start-watch\" \"cd client && yarn start\"",
-    "test": "jest",
+    "test": "jest && cd client && CI=true yarn test --watchAll=false",
     "heroku-postbuild": "cd client && yarn && yarn run build"
   },
   "repository": {
