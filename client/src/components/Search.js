@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import './Search.scss';
 
-const Search = ({ label, onFormSubmit, error }) => {
+const Search = ({ label, onFormSubmit, error, units, setUnits }) => {
   const [term, setTerm] = useState('');
   const [floatingLabel, setFloatingLabel] = useState('');
 
   const onSubmit = (event) => {
     event.preventDefault();
-    onFormSubmit(term);
+    onFormSubmit(term, units);
   }
 
   useEffect( () => {
@@ -17,6 +17,14 @@ const Search = ({ label, onFormSubmit, error }) => {
   return (
     <div className={`search${error ? ' search--error' : ''}`}>
       <form onSubmit={onSubmit} className="form">
+      <label>
+        <input
+        checked={units}
+        onChange={(e) => setUnits(e.target.checked)}
+        type="checkbox"
+        />
+        F&deg; / C&deg;
+      </label>
         <div className={`search__input-group${floatingLabel}`}>
           <label className="search__input-label">
             {label}

@@ -1,7 +1,7 @@
 import placeholder from '../images/weather-placeholder.gif';
 import './Results.scss';
 
-const Results = ({ results, error }) => {
+const Results = ({ results, error, units }) => {
   if (results && results.weather && !error) {
     const { weather, main: { temp, feels_like, temp_max, temp_min }, name } = results;
     const { main, description, icon } = weather[0];
@@ -10,7 +10,7 @@ const Results = ({ results, error }) => {
       <div className="results">
         <div className="results__current-conditions">
           <h2>{name} Weather</h2>
-          <div className="results__current-temperate">{parseInt(temp)}&deg;F</div>
+          <div className="results__current-temperate">{parseInt(temp)}&deg;{units ? 'F' : 'C'}</div>
           <p>
             <strong>{main}</strong><br />
             Feels like {parseInt(feels_like)}&deg;

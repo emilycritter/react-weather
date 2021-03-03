@@ -8,7 +8,7 @@ router.get('/search-location', (req, res, next) => {
     axios.get('http://api.openweathermap.org/data/2.5/weather', {
       params: {
         appid: process.env.OPEN_WEATHER_MAP_API_KEY,
-        units: 'imperial',
+        units: req.query.units,
         q: req.query.location + ',US'
       }
     })
